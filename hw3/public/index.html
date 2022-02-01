@@ -1,0 +1,123 @@
+<!-- CS 341 Homework -->
+<!--  Anna Yrjanson  -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cheesecake Ordering</title>
+        <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css" media="screen" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div id="bigform">
+            <!-- Top Heading -->
+            <h1>Cheesecake Order Form</h1>
+
+            <!-- Image of Cheesecake -->
+            <img src=https://upload.wikimedia.org/wikipedia/commons/thumb/archive/9/9c/20171018065859%21Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg/120px-Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg
+                alt="Cheesecake Image">
+
+            <form id="order">
+                <!-- Quantity and Topping -->
+                <table id="part1">
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Topping</th>
+                    </tr>
+                    <tr>
+                        <!-- Drop Down Menu -->
+                        <td>
+                            <select name="quantity" id="quantity" form="order">
+                                <option value="1">1</option>                            
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+
+                        <!-- Three Options -->                
+                        <td>
+                            <input type="radio" id="plain" name="topping" value="Plain">
+                            <label for="plain">Plain</label><br>
+                            <input type="radio" id="cherry" name="topping" value="Cherry">
+                            <label for="cherry">Cherry</label><br>
+                            <input type="radio" id="chocolate" name="topping" value="Chocolate">                    
+                            <label for="chocolate">Chocolate</label>
+                        </td>   
+                    </tr>
+                </table>
+
+                <label for="instruction" id="notes">Notes:</label>
+                <table id="part2">
+                    <tr id="textbox">
+                        <td>                     
+                        <!-- Special Instructions -->
+                            <textarea form="order" id="instructions" name="instructions" rows="5" cols="50"
+                                    placeholder="Enter any special instructions here."></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <!-- Order Button -->
+                            <!-- <input id="orderButton" type="submit" value="Order"> -->
+                            <button type="button" id="orderButton" onclick="">Order</button> <br>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+            <table style="width:12%">
+                <tr>
+                  <td> 
+                    <!-- Label -->
+                    <h3>Orders for</h3>
+                </td>
+                  <td>
+                    <!-- Dropdown of Months -->  
+                    <div class="dropdown"><select name="dropdown" id="selectMonth" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                        <option value="">Jan</option>
+                        <option value="">Feb</option>
+                        <option value="">Mar</option>
+                        <option value="">Apr</option>
+                        <option value="">May</option>
+                        <option value="">Jun</option>
+                        <option value="">Jul</option>
+                        <option value="">Aug</option>
+                        <option value="">Sep</option>
+                        <option value="">Oct</option>
+                        <option value="">Nov</option>
+                        <option value="">Dec</option>
+                    </select></div>
+                  </td>
+                </tr>
+              </table>
+            <td>
+
+            <!-- Last Month's Orders -->
+            <ul>
+                <li>11 Cherry</li>
+                <li>17 Chocolate</li>
+                <li>31 Plain</li>
+            </ul>
+        </div>
+
+        <!-- Order Placed with Receipt -->
+        <div style="display: none;" id="thanksScreen">
+            <h1>
+                Thank you! Your order has been placed.
+            </h1>
+
+            <h4 id="theQuantity"></h4>
+            <h4 id="theTopping"></h4>
+            <p id="theInstructions"></p>
+        </div>
+
+    <!-- 'Vegan' Instructions Indication -->    
+    <script src="javascripts/place-order.js"></script>
+    
+    <!-- Reference to JS script for menu change -->
+    <script src="javascripts/menu-click.js"></script>
+
+    </body>
+</html>
