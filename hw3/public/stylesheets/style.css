@@ -1,15 +1,9 @@
-/* CS 341 Homework
+b/* CS 341 Homework
     Anna Yrjanson */
 
-/* Background light brown color */  
+/* Background light brown color */    
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background:rgb(255,228,196)
-}
-
-a {
-  color: #00B7FF;
 }
 
 /* Level 1 Headings */

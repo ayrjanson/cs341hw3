@@ -1,9 +1,8 @@
-eventHandler = function( event ) {
-    var monthVal = href.attr();  
-    document.getElementById('selectMonth').style.display = 'table-column-group';
-}
-
-// Change of Display when Dropdown Clicked
-$(function() {
-    $("#selectMonth").click(eventHander); 
+$(function(){
+    $("#dropdown").hover(function() {
+        $(this).attr('size', 4);
+    },
+    function() {
+        $(this).attr('size', 1);
+    });
 });

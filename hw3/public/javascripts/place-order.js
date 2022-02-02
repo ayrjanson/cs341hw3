@@ -1,18 +1,16 @@
-eventHandler = function( event ) {
-    if ($ ("#instructions").val().toLowerCase().indexOf("vegan") != -1) {
-        //Notes contain the word vegan
-        alert("Cheesecake contains dairy");
-    }
-    else {
-        //Notes don't contain vegan
+ eventHandler = function( event ) {
+    if($ ("#instructions").val().toLowerCase().indexOf("vegan") != -1) {
+        alert("WARNING! ALL CHEESECAKES CONTAIN DAIRY PRODUCTS! ");
+      }
+      else {
         $ ("#bigform").removeAttr("style").hide();
         $ ("#thanksScreen").show();
-        $ ("#theTopping").html("Topping: " + $("input[name='topping']:checked").val());
-        $ ("#theQuantity").html("Quantity: " + $("#quantity").val());
-        $ ("#theInstructions").html("Notes: " + $ ("#instructions").val());
-    }
+        $ ("#topping").html("Topping: " + $ ("input[name='Topping']:checked").val());
+        $ ("#quantity").html("Quantity: " + $ ("#theQuantity").val());
+        $ ("#instructions").html("Notes: " + $ ("#notes").val());
+      }
 }
 
 $(function() {
-    $ ("#orderButton").click(eventHandler);
-});    
+    $("#orderButton").click(eventHandler);
+});
