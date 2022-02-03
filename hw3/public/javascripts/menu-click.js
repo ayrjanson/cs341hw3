@@ -1,7 +1,9 @@
+//CS 341 Anna Yrjanson
 $(function(){
-    $("#dropdown").hover(function() {
+    $("#selectMonth").hover(function() {
         $(this).attr('size', 4);
     },
+    
     function() {
         $(this).attr('size', 1);
     });
