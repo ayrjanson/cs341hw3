@@ -70,36 +70,35 @@
 
             <table style="width:12%">
                 <tr>
-                  <td> 
+                    <td> 
                     <!-- Label -->
-                    <h3>Orders for</h3>
-                </td>
+                        <h3>Orders for</h3>
+                    </td>
                   <td>
                     <!-- Dropdown of Months -->  
                     <div class="dropdown"><select name="dropdown" id="selectMonth" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
-                        <option value="">Jan</option>
-                        <option value="">Feb</option>
-                        <option value="">Mar</option>
-                        <option value="">Apr</option>
-                        <option value="">May</option>
-                        <option value="">Jun</option>
-                        <option value="">Jul</option>
-                        <option value="">Aug</option>
-                        <option value="">Sep</option>
-                        <option value="">Oct</option>
-                        <option value="">Nov</option>
-                        <option value="">Dec</option>
+                        <option class="monthOption" value="">Jan</option>
+                        <option class="monthOption" value="">Feb</option>
+                        <option class="monthOption" value="">Mar</option>
+                        <option class="monthOption" value="">Apr</option>
+                        <option class="monthOption" value="">May</option>
+                        <option class="monthOption" value="">Jun</option>
+                        <option class="monthOption" value="">Jul</option>
+                        <option class="monthOption" value="">Aug</option>
+                        <option class="monthOption" value="">Sep</option>
+                        <option class="monthOption" value="">Oct</option>
+                        <option class="monthOption" value="">Nov</option>
+                        <option class="monthOption" value="">Dec</option>
                     </select></div>
                   </td>
                 </tr>
               </table>
-            <td>
 
             <!-- Last Month's Orders -->
             <ul>
-                <li>11 Cherry</li>
-                <li>17 Chocolate</li>
-                <li>31 Plain</li>
+                <li id="cherryNumber">11 Cherry</li>
+                <li id="chocolateNumber">17 Chocolate</li>
+                <li id="plainNumber">31 Plain</li>
             </ul>
         </div>
 
@@ -118,7 +117,23 @@
     <script src="javascripts/place-order.js"></script>
     
     <!-- Reference to JS script for menu change -->
-    <script src="javascripts/menu-click.js"></script>
+    <!-- <script src="javascripts/menu-click.js"></script> -->
+
+    <script>
+        $(document).ready(function() {
+            $(".monthOption").click(function() {
+                $.post("orders","dataToSend",function(data,status) {
+                    dataObject=JSON.parse(data);
+                    orderArray=dataObject.data;
+
+                    $("#cherryNumber").html((orderArray[0]).quantity+" "+(orderArray[0]).topping);
+                    $("#chocolateNumber").html((orderArray[1]).quantity+" "+(orderArray[1]).topping);
+                    $("#plainNumber").html((orderArray[2]).quantity+" "+(orderArray[2]).topping);
+                });
+                $(this).attr('size', 4);
+            });
+        });
+    </script>
 
     </body>
 </html>
