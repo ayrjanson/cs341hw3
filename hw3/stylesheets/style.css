@@ -3,12 +3,12 @@
 
 /* Background light brown color */    
 body {
-    background:rgb(255,228,196)
+    background:rgb(185, 159, 127)
   }
   
   /* Level 1 Headings */
   h1 {
-    font-family: "Lucidia Handwriting", Impact, "Arial Narrow Bold", sans-serif;
+    font-family: “Playfair Display”, “Didot”, "Times New Roman", Times, serif;
     color:rgb(178,34,34)
   }
   
@@ -25,7 +25,7 @@ body {
   
   /* Order Numbers Indication */
   h3 {
-    font-family:'Courier New', Courier, monospace;
+    font-family: “Playfair Display”, “Didot”, "Times New Roman", Times, serif;
     color:rgb(178,34,34)
   }
   
