@@ -68,7 +68,7 @@
                 </table>
             </form>
 
-            <table style="width:12%">
+            <table id="stats" style="width:12%">
                 <tr>
                     <td> 
                     <!-- Label -->
@@ -95,7 +95,7 @@
               </table>
 
             <!-- Last Month's Orders -->
-            <ul>
+            <ul id="lastOrder">
                 <li id="cherryNumber">11 Cherry</li>
                 <li id="chocolateNumber">17 Chocolate</li>
                 <li id="plainNumber">31 Plain</li>
@@ -117,23 +117,7 @@
     <script src="javascripts/place-order.js"></script>
     
     <!-- Reference to JS script for menu change -->
-    <!-- <script src="javascripts/menu-click.js"></script> -->
-
-    <script>
-        $(document).ready(function() {
-            $(".monthOption").click(function() {
-                $.post("orders","dataToSend",function(data,status) {
-                    dataObject=JSON.parse(data);
-                    orderArray=dataObject.data;
-
-                    $("#cherryNumber").html((orderArray[0]).quantity+" "+(orderArray[0]).topping);
-                    $("#chocolateNumber").html((orderArray[1]).quantity+" "+(orderArray[1]).topping);
-                    $("#plainNumber").html((orderArray[2]).quantity+" "+(orderArray[2]).topping);
-                });
-                $(this).attr('size', 4);
-            });
-        });
-    </script>
+    <script src="javascripts/menu-click.js"></script>
 
     </body>
 </html>

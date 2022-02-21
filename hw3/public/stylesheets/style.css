@@ -52,5 +52,5 @@ select {
   -webkit-border-radius: 9px 9px 9px 9px;
   border-radius: 9px 9px 9px 9px;
   box-shadow: 1px 1px 11px #330033;
-  background: url("arrow.gif") no-repeat scroll 319px 5px rgb(119, 22, 46);
+  /* background: url("arrow.gif") no-repeat scroll 319px 5px rgb(119, 22, 46); */
 }

@@ -4,11 +4,20 @@
         alert("WARNING! ALL CHEESECAKES CONTAIN DAIRY PRODUCTS! ");
       }
       else {
-        $ ("#order").removeAttr("style").hide();
+        $.post("neworder", {
+          QUANTITY: $("#quantity option:selected").val(),
+          TOPPING: $("input[name=topping]:checked").val(),
+          NOTES:$("#instructions").val()
+      });   
+        
+        $ ("#order").hide(); //Original: $ ("#order").removeAttr("style").hide();
+        $ ("#stats").hide(); //Recent addition
+        $ ("#lastOrder").hide();
+        // Original: $ ("#stats").removeArrr("style").hide();
         $ ("#thanksScreen").show();
-        $ ("#topping").html("Topping: " + $ ("input[name='Topping']:checked").val());
-        $ ("#quantity").html("Quantity: " + $ ("#theQuantity").val());
-        $ ("#instructions").html("Notes: " + $ ("#notes").val());
+        $ ("#theTopping").html("Topping: " + $ ("input[name='topping']:checked").val());
+        $ ("#theQuantity").html("Quantity: " + $ ("#quantity").val());
+        $ ("#theInstructions").html("Notes: " + $ ("#instructions").val());
       }
 }
 
